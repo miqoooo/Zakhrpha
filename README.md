@@ -45,7 +45,7 @@
 ## Screenshots & Videos
 
 <p align="center">
-    ![Onboarding](https://github.com/miqoooo/Zakhrpha/raw/main/Assets/onboarding.gif)
+    <img src="Assets/onboarding.gif" width="380" height="724" />
 </p>  
 
 <p align="center"> 
