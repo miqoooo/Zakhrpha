@@ -44,8 +44,8 @@
 
 ## Screenshots & Videos
 
-<p align="center"> 
-    [![Onboarding video](https://raw.githubusercontent.com/miqoooo/Zakhrpha/main/Assets/onboarding.mov)](https://raw.githubusercontent.com/miqoooo/Zakhrpha/main/Assets/onboarding.mov)
+<p align="center">
+    ![Onboarding](https://github.com/miqoooo/Zakhrpha/raw/main/Assets/onboarding.gif)
 </p>  
 
 <p align="center"> 

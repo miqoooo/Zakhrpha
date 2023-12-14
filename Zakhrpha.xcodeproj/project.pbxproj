@@ -24,9 +24,9 @@
 		4AECD0032B2B153600353EE2 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AECCFEF2B2B153600353EE2 /* Application.swift */; };
 		4AECD0042B2B153600353EE2 /* ScaleButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AECCFF22B2B153600353EE2 /* ScaleButtonStyle.swift */; };
 		4AECD0072B2B156000353EE2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4AECD0062B2B156000353EE2 /* README.md */; };
-		4AECD00C2B2B6D1F00353EE2 /* onboarding.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4AECD0092B2B6D1F00353EE2 /* onboarding.mov */; };
 		4AECD00D2B2B6D1F00353EE2 /* splash_screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AECD00A2B2B6D1F00353EE2 /* splash_screen.png */; };
 		4AECD00E2B2B6D1F00353EE2 /* onboarding.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AECD00B2B2B6D1F00353EE2 /* onboarding.png */; };
+		4AECD0192B2B710A00353EE2 /* onboarding.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4AECD0182B2B710A00353EE2 /* onboarding.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,9 +48,9 @@
 		4AECCFEF2B2B153600353EE2 /* Application.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		4AECCFF22B2B153600353EE2 /* ScaleButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScaleButtonStyle.swift; sourceTree = "<group>"; };
 		4AECD0062B2B156000353EE2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		4AECD0092B2B6D1F00353EE2 /* onboarding.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = onboarding.mov; sourceTree = "<group>"; };
 		4AECD00A2B2B6D1F00353EE2 /* splash_screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash_screen.png; sourceTree = "<group>"; };
 		4AECD00B2B2B6D1F00353EE2 /* onboarding.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onboarding.png; sourceTree = "<group>"; };
+		4AECD0182B2B710A00353EE2 /* onboarding.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = onboarding.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,7 +172,7 @@
 		4AECD0082B2B6BB900353EE2 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				4AECD0092B2B6D1F00353EE2 /* onboarding.mov */,
+				4AECD0182B2B710A00353EE2 /* onboarding.gif */,
 				4AECD00A2B2B6D1F00353EE2 /* splash_screen.png */,
 				4AECD00B2B2B6D1F00353EE2 /* onboarding.png */,
 			);
@@ -241,7 +241,7 @@
 				4AECD00D2B2B6D1F00353EE2 /* splash_screen.png in Resources */,
 				4AECD0072B2B156000353EE2 /* README.md in Resources */,
 				4AECCFFE2B2B153600353EE2 /* Assets.xcassets in Resources */,
-				4AECD00C2B2B6D1F00353EE2 /* onboarding.mov in Resources */,
+				4AECD0192B2B710A00353EE2 /* onboarding.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
