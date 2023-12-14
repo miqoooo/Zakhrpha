@@ -56,7 +56,7 @@
 
 <p align="center">
     <img src="Assets/subscribe_1.png" width="380" height="724" />
-    <img src="Assets/subscribe_2.png" width="380" height="724" />
+    <img src="Assets/subscribe_3.png" width="380" height="724" />
 </p>  
 
 
