@@ -1,6 +1,6 @@
 //
 //  Application.swift
-//  RealTemperature
+//  Zakhrpha
 //
 //  Created by miqo on 11.12.23.
 //
@@ -8,10 +8,7 @@
 import SwiftUI
 
 class AppConstants {
-    static let BLUE_LIENAR = LinearGradient(
-        colors: [Color("linear_topLeft"), Color("linear_bottomRight")],
-        startPoint: .topLeading, endPoint: .bottomTrailing
-    )
+    
 }
 
 @main

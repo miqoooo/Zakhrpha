@@ -1,6 +1,6 @@
 //
 //  SwiftUIView.swift
-//  RealTemperature
+//  Zakhrpha
 //
 //  Created by miqo on 11.12.23.
 //
@@ -36,12 +36,8 @@ struct InitialView: View {
     @ViewBuilder
     func SplashScreen() -> some View {
         ZStack(alignment: .center) {
-            AppConstants.BLUE_LIENAR
-                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-            
-            Image("appLogo")
-                .resizable().scaledToFit()
-                .frame(width: 156, height: 93)
+            Image("splash_screen")
+                .resizable().scaledToFill()
         }
         .ignoresSafeArea()
     }

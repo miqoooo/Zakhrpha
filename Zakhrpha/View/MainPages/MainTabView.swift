@@ -51,7 +51,7 @@ struct MainTabView<Content: View>: View {
                     }
                     
                     Circle()
-                        .fill(AppConstants.BLUE_LIENAR)
+                        .fill(.red)
                         .frame(width: 60, height: 60)
                         .overlay {
                             Text("+")

@@ -1,6 +1,6 @@
 //
 //  OnboardingPage.swift
-//  RealTemperature
+//  Zakhrpha
 //
 //  Created by miqo on 11.12.23.
 //
@@ -26,56 +26,62 @@ struct OnboardingPage: View {
             }
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
             
-            VStack {
+            VStack(spacing: 40) {
                 Spacer()
                 
+                Button(action: {
+                    if let nextPath = pages[currentPage].next() {
+                        print("nexPath: ", nextPath.title)
+                        currentPage = nextPath.rawValue
+                    } else {
+                        appVM.state = .mainPage
+                    }
+                }, label: {
+                    Text("Next")
+                        .frame(width: 100, height: 46)
+                        .background {
+                            RoundedRectangle(cornerRadius: 70)
+                                .fill(Color("onboarding_button"))
+                        }
+                })
+                .buttonStyle(ScaledButtonStyle())
+                
                 HStack {
-                    Spacer()
-                    
-                    Button(action: {
-                        if let nextPath = pages[currentPage].next() {
-                            print("nexPath: ", nextPath.title)
-                            currentPage = nextPath.rawValue
-                        } else {
-                            appVM.state = .mainPage
-                        }
-                    }, label: {
-                        ZStack {
-                            Image("onboarding_button")
-                                .resizable()
-                                .frame(width: 50, height: 50)
-                            
-                            Circle()
-                                .stroke(lineWidth: 1)
-                                .fill(Color(hex: "F7F8F8"))
-                                .frame(width: 50+10, height: 50+10)
-                            
-                            Circle()
-                                .trim(from: 0, to: pages[currentPage].trimValue)
-                                .stroke(lineWidth: 3).rotation(.degrees(90))
-                                .fill(AppConstants.BLUE_LIENAR)
-                                .frame(width: 50+10, height: 50+10)
-                        }
-                    })
-                    .buttonStyle(ScaledButtonStyle())
+                    ForEach(0..<4, id:\.self) { index in
+                        Circle()
+                            .fill(Color("onboarding_button"))
+                            .frame(width: 5, height: 5)
+                            .opacity(index == currentPage ? 1 : 0.5)
+                    }
                 }
-                .padding(.horizontal, 30)
-                .padding(.bottom, 30)
+                .padding(.bottom, 70)
             }
+            
+            Text("Skip")
+                .foregroundStyle(Color(hex: "#8C8E92"))
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
+                .padding(.trailing, 30)
+                .padding(.top, 60)
+                .onTapGesture { appVM.state = .mainPage }
         }
         .ignoresSafeArea()
     }
     
     func PageContent(state: OnboardingVM.State) -> some View {
         ZStack(alignment: .top) {
+            VStack(spacing: 0) {
+                Color(hex: "F2F2F5")
+                    .frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight/2)
+                Color(hex: "FFFFFF")
+                    .frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight/2)
+            }
+            
             Image(state.image)
                 .resizable().scaledToFit()
-                .frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight)
+                .padding(.top, 100)
                 .ignoresSafeArea()
             
             VStack(alignment: .center, spacing: 30, content: {
-                Spacer()
-                
                 Text(state.title)
                     .font(.system(size: 22, weight: .bold))
                     .multilineTextAlignment(.center)
@@ -84,27 +90,9 @@ struct OnboardingPage: View {
                     .font(.system(size: 14, weight: .medium))
                     .lineLimit(nil).multilineTextAlignment(.center)
                     .frame(maxWidth: 350)
-                 
-                HStack {
-                    let color = Color(hex: "000000")
-                    
-                    RoundedRectangle(cornerRadius: 3)
-                        .frame(width: currentPage == 0 ? 20 : 8, height: 3)
-                        .foregroundStyle(currentPage == 0 ? color : color.opacity(0.5))
-                    
-                    RoundedRectangle(cornerRadius: 3)
-                        .frame(width: currentPage == 1 ? 20 : 8, height: 3)
-                        .foregroundStyle(currentPage == 1 ? color : color.opacity(0.5))
-                    
-                    RoundedRectangle(cornerRadius: 3)
-                        .frame(width: currentPage == 2 ? 20 : 8, height: 3)
-                        .foregroundStyle(currentPage == 2 ? color : color.opacity(0.5))
-                }
-                .padding(.bottom, 70)
-                
             })
             .padding(.horizontal, 30)
-            .padding(.bottom, 30)
+            .offset(y: UIScreen.screenHeight * 3/5)
         }
         .ignoresSafeArea()
     }

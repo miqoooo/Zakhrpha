@@ -42,15 +42,16 @@
     - help
     - check our App
 
-## Screenshots
+## Screenshots & Videos
 
-<!--<p align="center"> -->
-<!-- <img src="Images/poster.png" width="800" height="522">  -->
-<!--</p>  -->
+<p align="center"> 
+    [![Onboarding video](https://raw.githubusercontent.com/miqoooo/Zakhrpha/main/Assets/onboarding.mov)](https://raw.githubusercontent.com/miqoooo/Zakhrpha/main/Assets/onboarding.mov)
+</p>  
 
-<!--<p align="center"> -->
-<!--  <img src="Images/menu.png" width="800" height="522">  -->
-<!--</p>  -->
+<p align="center"> 
+    <img src="Assets/splash_screen.png" width="380" height="724">
+    <img src="Assets/onboarding.png" width="380" height="724">  
+</p>  
 
 
 ## Frameworks and dependencies
