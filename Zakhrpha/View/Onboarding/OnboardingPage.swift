@@ -19,7 +19,7 @@ struct OnboardingPage: View {
             TabView(selection: $currentPage) {
                 ForEach(pages.indices, id: \.self) { index in
                     PageContent(state: pages[index])
-                        .foregroundStyle(Color("dark_foreground"))
+                        .foregroundStyle(Color("text"))
                         .animation(.easeIn(duration: 0.3), value: currentPage)
                         .id(index)
                 }
@@ -41,7 +41,7 @@ struct OnboardingPage: View {
                         .frame(width: 100, height: 46)
                         .background {
                             RoundedRectangle(cornerRadius: 70)
-                                .fill(Color("onboarding_button"))
+                                .fill(Color("button_bg"))
                         }
                 })
                 .buttonStyle(ScaledButtonStyle())
@@ -49,7 +49,7 @@ struct OnboardingPage: View {
                 HStack {
                     ForEach(0..<4, id:\.self) { index in
                         Circle()
-                            .fill(Color("onboarding_button"))
+                            .fill(Color("button_bg"))
                             .frame(width: 5, height: 5)
                             .opacity(index == currentPage ? 1 : 0.5)
                     }

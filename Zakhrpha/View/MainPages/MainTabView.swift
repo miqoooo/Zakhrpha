@@ -25,7 +25,7 @@ struct MainTabView<Content: View>: View {
                 Spacer()
                 
                 ZStack {
-                    HStack(spacing: 5) {
+                    HStack(spacing: 90) {
                         ForEach(tabs.indices, id: \.self) { index in
                             Button {
                                 self.selection = index
@@ -43,23 +43,21 @@ struct MainTabView<Content: View>: View {
                             bottomTrailingRadius: 0,
                             topTrailingRadius: 50
                         ).fill(
-                            .white
-                                .shadow(.drop(radius: 7, y: -5))
-                                .shadow(.drop(radius: 7, y: -5))
+                            Color("button_bg")
+                                .shadow(.drop(radius: 7, y: 0))
                             //Color("foreground")
                         )
                     }
                     
-                    Circle()
-                        .fill(.red)
+                    RoundedRectangle(cornerRadius: 20)
+                        .fill(Color("unfocus"))
                         .frame(width: 60, height: 60)
                         .overlay {
                             Text("+")
                                 .font(.system(size: 50, weight: .light))
-                                .foregroundStyle(.white)
+                                .foregroundStyle(Color("button_bg"))
                                 .offset(y: -3)
                         }
-                        .offset(y: -55)
                         .frame(maxWidth: .infinity, alignment: .center)
                 }
             }
@@ -74,7 +72,7 @@ struct TabItemView: View {
     
     var body: some View {
         ZStack {
-            VStack(spacing: 5) {
+            HStack(spacing: 10) {
                 Image(item.icon)
                     .resizable()
                     .renderingMode(.template)
@@ -82,13 +80,26 @@ struct TabItemView: View {
                     .frame(width: 25, height: 25)
                 
                 Text(item.name)
-                    .font(.system(size: 9))
+                    .font(.system(size: 15))
+            }
+            .animation(.none, value: isSelected)
+            .offset(y: isSelected ? -5 : 0)
+            
+            if isSelected {
+                UnevenRoundedRectangle(
+                    topLeadingRadius: 50,
+                    bottomLeadingRadius: 0,
+                    bottomTrailingRadius: 0,
+                    topTrailingRadius: 50
+                )
+                .fill(Color("focus"))
+                .frame(width: 100, height: 8)
+                .frame(maxHeight: .infinity, alignment: .bottom)
             }
         }
-        .offset(y: isSelected ? -5 : 0)
-        .frame(minWidth: 70)
+        .frame(minWidth: 100)
         .animation(.default.speed(2), value: isSelected)
-        .foregroundColor(isSelected ? .black : .gray)
+        .foregroundColor(isSelected ? Color("focus") : Color("unfocus"))
     }
 }
 
